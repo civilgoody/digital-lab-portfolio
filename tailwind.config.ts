@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				mono: ['JetBrains Mono', 'Consolas', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +65,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cyber: {
+					background: '#0F1221',
+					dark: '#1A1F2C', 
+					foreground: '#E0E0E0',
+					primary: '#8B5CF6',  // Purple
+					secondary: '#4F87FF', // Blue
+					accent: '#38BDF8',   // Light blue
+					highlight: '#10B981', // Green
+					muted: '#6B7280',
+					border: '#2D3748'
 				}
 			},
 			borderRadius: {
@@ -84,11 +99,31 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'terminal-typing': {
+					'0%': { width: '0' },
+					'100%': { width: '100%' }
+				},
+				'cursor-blink': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'glow': {
+					'0%, 100%': { textShadow: '0 0 5px rgba(139, 92, 246, 0.5)' },
+					'50%': { textShadow: '0 0 20px rgba(139, 92, 246, 0.8)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'typing': 'terminal-typing 3.5s steps(30, end)',
+				'cursor-blink': 'cursor-blink 0.75s step-end infinite',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'glow': 'glow 2s ease-in-out infinite'
 			}
 		}
 	},
